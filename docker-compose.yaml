@@ -6,4 +6,9 @@ services:
     ports:
       - "1025:1025" # SMTP server
       - "8025:8025" # Web UI
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: maildir
+    volumes:
+      - /tmp/mailhog/data:/home/mailhog/maildir
 
